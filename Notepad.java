@@ -1,6 +1,10 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class Notepad {
+@SuppressWarnings("unused")
+public class Notepad  {
 	
 	JFrame f;
 	JMenuBar m;
@@ -46,6 +50,19 @@ public class Notepad {
 		help.add(contact);
 		about = new JMenuItem("About");
 		help.add(about);
+		
+		
+		NotepadListner l = new NotepadListner(this);
+		open.addActionListener(l);
+		save.addActionListener(l);
+		saveAs.addActionListener(l);
+		copy.addActionListener(l);
+		cut.addActionListener(l);
+		paste.addActionListener(l);
+		contact.addActionListener(l);
+		about.addActionListener(l);
+		
+		
 		
 		
 		t = new JTextArea(200,200);
